@@ -14,9 +14,9 @@ use Rumbo\AppBundle\Form\ClienteType;
  */
 class ClienteController extends Controller
 {
-
     /**
      * Lists all Cliente entities.
+     * Lista todos los clientes de forma ascendente con este formato: apellido1 apellido2, Nombre.
      *
      */
     public function indexAction()
@@ -55,7 +55,7 @@ class ClienteController extends Controller
 
     /**
      * Creates a form to create a Cliente entity.
-     *
+     * Crea un formulario para añadir clientes.
      * @param Cliente $entity The entity
      *
      * @return \Symfony\Component\Form\Form The form
@@ -74,6 +74,7 @@ class ClienteController extends Controller
 
     /**
      * Displays a form to create a new Cliente entity.
+     * Muestra el formulario para crear nuevo cliente.
      *
      */
     public function newAction()
@@ -89,6 +90,7 @@ class ClienteController extends Controller
 
     /**
      * Finds and displays a Cliente entity.
+     * Encuentra y muestra un cliente existente.
      *
      */
     public function showAction($id)
@@ -111,6 +113,7 @@ class ClienteController extends Controller
 
     /**
      * Displays a form to edit an existing Cliente entity.
+     * Muestra un formulario para editar clientes.
      *
      */
     public function editAction($id)
@@ -135,6 +138,7 @@ class ClienteController extends Controller
 
     /**
     * Creates a form to edit a Cliente entity.
+    * Crea un formulario para editar clientes.
     *
     * @param Cliente $entity The entity
     *
@@ -153,6 +157,7 @@ class ClienteController extends Controller
     }
     /**
      * Edits an existing Cliente entity.
+     * Edita un cliente existente.
      *
      */
     public function updateAction(Request $request, $id)
@@ -183,6 +188,7 @@ class ClienteController extends Controller
     }
     /**
      * Deletes a Cliente entity.
+     * Borra un cliente existente.
      *
      */
     public function deleteAction(Request $request, $id)
@@ -207,6 +213,7 @@ class ClienteController extends Controller
 
     /**
      * Creates a form to delete a Cliente entity by id.
+     * Crea un formulario para borrar el cliente por id.
      *
      * @param mixed $id The entity id
      *
