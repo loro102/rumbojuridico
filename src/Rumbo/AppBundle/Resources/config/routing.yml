@@ -1,0 +1,7 @@
+rumbo_app_cliente:
+    resource: "@RumboAppBundle/Resources/config/routing/cliente.yml"
+    prefix:   /cliente
+
+rumbo_app_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: RumboAppBundle:Default:index }

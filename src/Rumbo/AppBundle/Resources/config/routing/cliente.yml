@@ -1,0 +1,30 @@
+cliente:
+    path:     /
+    defaults: { _controller: "RumboAppBundle:Cliente:index" }
+
+cliente_show:
+    path:     /{id}/show
+    defaults: { _controller: "RumboAppBundle:Cliente:show" }
+
+cliente_new:
+    path:     /new
+    defaults: { _controller: "RumboAppBundle:Cliente:new" }
+
+cliente_create:
+    path:     /create
+    defaults: { _controller: "RumboAppBundle:Cliente:create" }
+    methods:  POST
+
+cliente_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "RumboAppBundle:Cliente:edit" }
+
+cliente_update:
+    path:     /{id}/update
+    defaults: { _controller: "RumboAppBundle:Cliente:update" }
+    methods:  [POST, PUT]
+
+cliente_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "RumboAppBundle:Cliente:delete" }
+    methods:  [POST, DELETE]

@@ -1,0 +1,7 @@
+rumbo_app:
+    resource: "@RumboAppBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
