@@ -248,9 +248,9 @@ class Siniestro
     /**
      * @var string
      *
-     * @ORM\Column(name="dañosvehiculo", type="text")
+     * @ORM\Column(name="danosvehiculo", type="text")
      */
-    protected $dañosvehiculo;
+    protected $danosvehiculo;
 
     /**
      * @var string
@@ -262,9 +262,9 @@ class Siniestro
     /**
      * @var string
      *
-     * @ORM\Column(name="daños�spersonales", type="text")
+     * @ORM\Column(name="danospersonales", type="text")
      */
-    protected $daños�spersonales;
+    protected $danospersonales;
 
     /**
      * @var string
