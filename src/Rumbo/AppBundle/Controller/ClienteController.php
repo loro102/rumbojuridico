@@ -55,7 +55,7 @@ class ClienteController extends Controller
 
     /**
      * Creates a form to create a Cliente entity.
-     * Crea un formulario para añadir clientes.
+     * Crea un formulario para aÃ±adir clientes.
      * @param Cliente $entity The entity
      *
      * @return \Symfony\Component\Form\Form The form

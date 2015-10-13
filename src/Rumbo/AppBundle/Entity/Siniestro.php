@@ -15,9 +15,9 @@ class Siniestro
     /**
      * @var integer
      *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(name="id", type="guid")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\GeneratedValue(strategy="UUID")
      */
     protected $id;
 
@@ -45,7 +45,7 @@ class Siniestro
     /**
      * @var string
      *
-     * @ORM\Column(name="fase", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="Rumbo\AppBundle\Entity\Fase")
      */
     protected $fase;
 
@@ -178,9 +178,9 @@ class Siniestro
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaingresohospital�", type="date")
+     * @ORM\Column(name="fechaingresohospital", type="date")
      */
-    protected $fechaingresohospital�;
+    protected $fechaingresohospital;
 
     /**
      * @var \DateTime
@@ -444,14 +444,14 @@ class Siniestro
     /**
      * @var string
      *
-     * @ORM\Column(name="cia", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="Rumbo\AppBundle\Entity\Cia")
      */
     protected $cia;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="tramitadorcia", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="Rumbo\AppBundle\Entity\tramitadorCia")
      */
     protected $tramitadorcia;
 
@@ -510,6 +510,13 @@ class Siniestro
      * @ORM\Column(name="deuda", type="string", length=255)
      */
     protected $deuda;
+
+     /**
+      * @var string
+      *
+      * @ORM\ManyToOne(targetEntity="Rumbo\AppBundle\Entity\Cliente")
+      */
+    protected $cliente;
 
     
 }
