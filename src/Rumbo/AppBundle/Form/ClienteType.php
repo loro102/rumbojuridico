@@ -6,7 +6,7 @@ use Rumbo\AppBundle\Entity\AgenteRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Rumbo\AppBundle\Entity\Cliente;
+
 
 class ClienteType extends AbstractType
 {
@@ -25,7 +25,7 @@ class ClienteType extends AbstractType
             ->add('localidad')
             ->add('provincia')
             ->add('nif')
-            ->add('fechadenacimiento','date',array('widget' => 'single_text','format' => 'yyyy-MM-dd','attr' => array('class'=> 'datepicker')))
+            ->add('fechadenacimiento','date',array('label'=>'Fecha de Nacimiento','widget' => 'single_text','format' => 'yyyy-MM-dd','attr' => array('class'=> 'datepicker')))
             ->add('fechaprimerabono','date',array('label'=>'Fecha de Primer Abono','widget' => 'single_text','format' => 'yyyy-MM-dd','attr' => array('class'=> 'datepicker')))
             ->add('fechaabono','date',array('label'=>'Fecha de Abono','widget' => 'single_text','format' => 'yyyy-MM-dd','attr' => array('class'=> 'datepicker')))
             ->add('telefono1')
@@ -33,9 +33,9 @@ class ClienteType extends AbstractType
             ->add('telefono3')
             ->add('email','email')
             ->add('notas')
-            ->add('precio')
             ->add('iban')
-            ->add('descuento')
+            ->add('precio','money',array('currency'=>'EUR'))
+            ->add('descuento','money',array('currency'=>'EUR'))
             ->add('noMailing','checkbox',array('required'=>false))
             ->add('firmadoabono','checkbox',array('required'=>false))
             ->add('agente','entity', array(

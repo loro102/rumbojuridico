@@ -88,14 +88,14 @@ class Cliente
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="Fechaprimerabono", type="date")
+     * @ORM\Column(name="Fechaprimerabono", type="date",nullable=true)
      */
     private $fechaprimerabono;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="Fechaabono", type="date")
+     * @ORM\Column(name="Fechaabono", type="date",nullable=true)
      */
     private $fechaabono;
 
@@ -130,7 +130,7 @@ class Cliente
     /**
      * @var string
      *
-     * @ORM\Column(name="Notas", type="text")
+     * @ORM\Column(name="Notas", type="text",nullable=true)
      *
      */
     private $notas;
@@ -146,21 +146,21 @@ class Cliente
     /**
      * @var string
      *
-     * @ORM\Column(name="Precio", type="decimal")
+     * @ORM\Column(name="Precio", type="decimal",length=10,nullable=true)
      */
     private $precio;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="Iban", type="string", length=50)
+     * @ORM\Column(name="Iban", type="string", length=50,nullable=true)
      */
     private $iban;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="Descuento", type="decimal")
+     * @ORM\Column(name="Descuento", type="decimal",length=10,nullable=true)
      */
     private $descuento;
 
