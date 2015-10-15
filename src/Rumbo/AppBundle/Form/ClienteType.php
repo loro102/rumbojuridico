@@ -36,7 +36,14 @@ class ClienteType extends AbstractType
             ->add('descuento')
             ->add('noMailing','checkbox',array('required'=>false))
             ->add('firmadoabono','checkbox',array('required'=>false))
-            ->add('agente')
+            ->add('agente',array(
+                'class' => 'RumboApp:Agente',
+                'empty_value' => '--------------------',
+                'query_builder' => function($er) {
+                    return $er->createQueryBuilder('u')
+                        ->select('u')
+                        ->orderBy('u.nombre','ASC');
+                }))
         ;
     }
     
