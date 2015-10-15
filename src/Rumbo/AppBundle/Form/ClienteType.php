@@ -2,9 +2,11 @@
 
 namespace Rumbo\AppBundle\Form;
 
+use Rumbo\AppBundle\Entity\AgenteRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Rumbo\AppBundle\Entity\Cliente;
 
 class ClienteType extends AbstractType
 {
@@ -36,15 +38,12 @@ class ClienteType extends AbstractType
             ->add('descuento')
             ->add('noMailing','checkbox',array('required'=>false))
             ->add('firmadoabono','checkbox',array('required'=>false))
-            ->add('agente',array(
-                'class' => 'RumboApp:Agente',
-                'empty_value' => '--------------------',
-                'query_builder' => function($er) {
+            ->add('agente','entity', array(
+                'class' => 'RumboAppBundle:Agente',
+                'query_builder' => function (AgenteRepository $er) {
                     return $er->createQueryBuilder('u')
-                        ->select('u')
-                        ->orderBy('u.nombre','ASC');
-                }))
-        ;
+                        ->orderBy('u.nombre', 'ASC');}));
+
     }
     
     /**
