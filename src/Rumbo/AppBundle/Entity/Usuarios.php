@@ -280,4 +280,3 @@ class Usuarios
         return $this->administrador;
     }
 }
-

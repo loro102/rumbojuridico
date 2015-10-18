@@ -67,4 +67,3 @@ class Fase
         return $this->getNombre();
     }
 }
-

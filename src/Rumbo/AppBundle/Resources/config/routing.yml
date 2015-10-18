@@ -1,3 +1,7 @@
+rumbo_app_siniestro:
+    resource: "@RumboAppBundle/Resources/config/routing/siniestro.yml"
+    prefix:   /siniestro
+
 rumbo_app_cliente:
     resource: "@RumboAppBundle/Resources/config/routing/cliente.yml"
     prefix:   /cliente

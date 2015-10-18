@@ -715,4 +715,11 @@ class Cliente
     {
         return $this->agente;
     }
+
+
+    public function __toString()
+    {
+        return $this->getApellido1().' '.$this->getApellido2().','.$this->getNombre();
+    }
+
 }

@@ -42,7 +42,8 @@ class ClienteType extends AbstractType
                 'class' => 'RumboAppBundle:Agente',
                 'query_builder' => function (AgenteRepository $er) {
                     return $er->createQueryBuilder('u')
-                        ->orderBy('u.nombre', 'ASC');}));
+                        ->orderBy('u.nombre', 'ASC')
+                        ;}));
 
     }
     
