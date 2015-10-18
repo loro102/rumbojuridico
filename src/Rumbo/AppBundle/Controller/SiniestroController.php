@@ -82,8 +82,9 @@ class SiniestroController extends Controller
     {
 
         $entity = new Siniestro($cliente);
-        $id=$em->getRepository('RumboAppBundle:Cliente')->find($cliente);
-        $entity->setCliente($id);
+        $id=$this->getDoctrine()->getManager();
+        $persona=$id->getRepository('RumboAppBundle:Cliente')->find($cliente);
+        $entity->setCliente($persona);
         $form   = $this->createCreateForm($entity);
 
         return $this->render('RumboAppBundle:Siniestro:new.html.twig', array(
