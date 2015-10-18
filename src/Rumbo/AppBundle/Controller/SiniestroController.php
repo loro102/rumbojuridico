@@ -34,11 +34,11 @@ class SiniestroController extends Controller
      * Creates a new Siniestro entity.
      *
      */
-    public function createAction(Request $request,$cliente)
+    public function createAction(Request $request)
     {
         $entity = new Siniestro();
-        $id= $er->getRepository('RumboAppBundle:Cliente')->find($cliente);
-        $entity->setCliente($id);
+        //$id= $er->getRepository('RumboAppBundle:Cliente')->find($cliente);
+        //->setCliente($id);
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
         if ($form->isValid()) {
@@ -78,12 +78,12 @@ class SiniestroController extends Controller
      * Displays a form to create a new Siniestro entity.
      *
      */
-    public function newAction()
+    public function newAction($cliente)
     {
 
-        $entity = new Siniestro();
-        //$id=$em->getRepository('RumboAppBundle:Cliente')->find($cliente);
-        //$entity->setCliente($id);
+        $entity = new Siniestro($cliente);
+        $id=$em->getRepository('RumboAppBundle:Cliente')->find($cliente);
+        $entity->setCliente($id);
         $form   = $this->createCreateForm($entity);
 
         return $this->render('RumboAppBundle:Siniestro:new.html.twig', array(
