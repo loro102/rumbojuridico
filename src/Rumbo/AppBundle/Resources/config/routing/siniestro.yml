@@ -1,0 +1,34 @@
+siniestro:
+    path:     /
+    defaults: { _controller: "RumboAppBundle:Siniestro:index" }
+
+siniestro_show:
+    path:     /{id}/show
+    defaults: { _controller: "RumboAppBundle:Siniestro:show" }
+
+siniestro_new:
+    path:     /new
+    defaults: { _controller: "RumboAppBundle:Siniestro:new" }
+
+siniestro_nuevo:
+    path:     /{cliente}/nuevo
+    defaults: { _controller: "RumboAppBundle:Siniestro:new" }
+
+siniestro_create:
+    path:     /create
+    defaults: { _controller: "RumboAppBundle:Siniestro:create" }
+    methods:  POST
+
+siniestro_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "RumboAppBundle:Siniestro:edit" }
+
+siniestro_update:
+    path:     /{id}/update
+    defaults: { _controller: "RumboAppBundle:Siniestro:update" }
+    methods:  [POST, PUT]
+
+siniestro_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "RumboAppBundle:Siniestro:delete" }
+    methods:  [POST, DELETE]

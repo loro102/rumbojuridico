@@ -1,0 +1,173 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Siniestro list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombrerepresentado</th>
+                <th>Dnirepresentado</th>
+                <th>Fechanacimientorepresentado</th>
+                <th>Tramitadorexp</th>
+                <th>Firmadoanexo</th>
+                <th>Abonadomomentosiniestro</th>
+                <th>Casotipo</th>
+                <th>Casotipocont</th>
+                <th>Accidentelaboral</th>
+                <th>Fechaaperturaexp</th>
+                <th>Fechacierreexp</th>
+                <th>Fechacobrocliente</th>
+                <th>Fechacobroempresa</th>
+                <th>Fechatalon</th>
+                <th>Cerradopor</th>
+                <th>Fechaarchivoexp</th>
+                <th>Fechabajalaboral</th>
+                <th>Fechaaltalaboral</th>
+                <th>Fechaaltadireccion</th>
+                <th>Fechasiniestro</th>
+                <th>Horasiniestro</th>
+                <th>Fechaingresohospital</th>
+                <th>Fechaaltahospital</th>
+                <th>Fechaaltaforense</th>
+                <th>Fechaofertamotivada</th>
+                <th>Fecharespuestamotivada</th>
+                <th>Respuestamotivadaaceptada</th>
+                <th>Desarrolloaccidente</th>
+                <th>Lugar</th>
+                <th>Localidad</th>
+                <th>Descripcionexp</th>
+                <th>Danosvehiculo</th>
+                <th>Condicion</th>
+                <th>Danospersonales</th>
+                <th>Cuantiaasisteciasanitaria</th>
+                <th>Firmacartaabogado</th>
+                <th>Cuantiaasisteciajuridica</th>
+                <th>Fechareclamacionaj</th>
+                <th>Fechadesignacionabogado</th>
+                <th>Ajcobrada</th>
+                <th>Fechacobroaj</th>
+                <th>Tipodeprocedimiento</th>
+                <th>Numeroprocedimiento</th>
+                <th>Diligenciasprevias</th>
+                <th>Asisteciajuridica</th>
+                <th>Presentadadenuncia</th>
+                <th>Fechadenuncia</th>
+                <th>Presentadademanda</th>
+                <th>Fechademanda</th>
+                <th>Fechaaudienciaprevia</th>
+                <th>Fechajuicio</th>
+                <th>Coberturaaccidentescorporales</th>
+                <th>Cuantiaacccorporales</th>
+                <th>Vehiculo</th>
+                <th>Matricula</th>
+                <th>Conductor</th>
+                <th>Tomador</th>
+                <th>Numeropoliza</th>
+                <th>Refexpediente</th>
+                <th>Fechapoliza</th>
+                <th>Fechafinpoliza</th>
+                <th>Indemnizacionfinalcliente</th>
+                <th>Apagarcliente</th>
+                <th>Beneficio</th>
+                <th>Indemnizacionsinfacturas</th>
+                <th>Pagoalagente</th>
+                <th>Deuda</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('siniestro_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.nombrerepresentado }}</td>
+                <td>{{ entity.dnirepresentado }}</td>
+                <td>{% if entity.fechanacimientorepresentado %}{{ entity.fechanacimientorepresentado|date('d-m-Y') }}{% endif %}</td>
+                <td>{{ entity.tramitadorexp }}</td>
+                <td>{{ entity.firmadoanexo }}</td>
+                <td>{{ entity.abonadomomentosiniestro }}</td>
+                <td>{{ entity.casotipo }}</td>
+                <td>{{ entity.casotipocont }}</td>
+                <td>{{ entity.accidentelaboral }}</td>
+                <td>{% if entity.fechaaperturaexp %}{{ entity.fechaaperturaexp|date('d-m-Y') }}{% endif %}</td>
+                <td>{{ entity.fechacierreexp }}</td>
+                <td>{% if entity.fechacobrocliente %}{{ entity.fechacobrocliente|date('d-m-Y') }}{% endif %}</td>
+                <td>{% if entity.fechacobroempresa %}{{ entity.fechacobroempresa|date('d-m-Y') }}{% endif %}</td>
+                <td>{% if entity.fechatalon %}{{ entity.fechatalon|date('d-m-Y') }}{% endif %}</td>
+                <td>{{ entity.cerradopor }}</td>
+                <td>{% if entity.fechaarchivoexp %}{{ entity.fechaarchivoexp|date('d-m-Y') }}{% endif %}</td>
+                <td>{% if entity.fechabajalaboral %}{{ entity.fechabajalaboral|date('d-m-Y') }}{% endif %}</td>
+                <td>{% if entity.fechaaltalaboral %}{{ entity.fechaaltalaboral|date('d-m-Y') }}{% endif %}</td>
+                <td>{% if entity.fechaaltadireccion %}{{ entity.fechaaltadireccion|date('d-m-Y') }}{% endif %}</td>
+                <td>{% if entity.fechasiniestro %}{{ entity.fechasiniestro|date('d-m-Y') }}{% endif %}</td>
+                <td>{{ entity.horasiniestro|date('H:i:s') }}</td>
+                <td>{% if entity.fechaingresohospital %}{{ entity.fechaingresohospital|date('d-m-Y') }}{% endif %}</td>
+                <td>{% if entity.fechaaltahospital %}{{ entity.fechaaltahospital|date('d-m-Y') }}{% endif %}</td>
+                <td>{% if entity.fechaaltaforense %}{{ entity.fechaaltaforense|date('d-m-Y') }}{% endif %}</td>
+                <td>{% if entity.fechaofertamotivada %}{{ entity.fechaofertamotivada|date('d-m-Y') }}{% endif %}</td>
+                <td>{% if entity.fecharespuestamotivada %}{{ entity.fecharespuestamotivada|date('d-m-Y') }}{% endif %}</td>
+                <td>{{ entity.respuestamotivadaaceptada }}</td>
+                <td>{{ entity.desarrolloaccidente }}</td>
+                <td>{{ entity.lugar }}</td>
+                <td>{{ entity.localidad }}</td>
+                <td>{{ entity.descripcionexp }}</td>
+                <td>{{ entity.danosvehiculo }}</td>
+                <td>{{ entity.condicion }}</td>
+                <td>{{ entity.danospersonales }}</td>
+                <td>{{ entity.cuantiaasisteciasanitaria }}</td>
+                <td>{{ entity.firmacartaabogado }}</td>
+                <td>{{ entity.cuantiaasisteciajuridica }}</td>
+                <td>{% if entity.fechareclamacionaj %}{{ entity.fechareclamacionaj|date('d-m-Y') }}{% endif %}</td>
+                <td>{% if entity.fechadesignacionabogado %}{{ entity.fechadesignacionabogado|date('d-m-Y') }}{% endif %}</td>
+                <td>{{ entity.ajcobrada }}</td>
+                <td>{% if entity.fechacobroaj %}{{ entity.fechacobroaj|date('d-m-Y') }}{% endif %}</td>
+                <td>{{ entity.tipodeprocedimiento }}</td>
+                <td>{{ entity.numeroprocedimiento }}</td>
+                <td>{{ entity.diligenciasprevias }}</td>
+                <td>{{ entity.asisteciajuridica }}</td>
+                <td>{{ entity.presentadadenuncia }}</td>
+                <td>{% if entity.fechadenuncia %}{{ entity.fechadenuncia|date('d-m-Y') }}{% endif %}</td>
+                <td>{{ entity.presentadademanda }}</td>
+                <td>{% if entity.fechademanda %}{{ entity.fechademanda|date('d-m-Y') }}{% endif %}</td>
+                <td>{% if entity.fechaaudienciaprevia %}{{ entity.fechaaudienciaprevia|date('d-m-Y') }}{% endif %}</td>
+                <td>{% if entity.fechajuicio %}{{ entity.fechajuicio|date('d-m-Y') }}{% endif %}</td>
+                <td>{{ entity.coberturaaccidentescorporales }}</td>
+                <td>{{ entity.cuantiaacccorporales }}</td>
+                <td>{{ entity.vehiculo }}</td>
+                <td>{{ entity.matricula }}</td>
+                <td>{{ entity.conductor }}</td>
+                <td>{{ entity.tomador }}</td>
+                <td>{{ entity.numeropoliza }}</td>
+                <td>{{ entity.refexpediente }}</td>
+                <td>{% if entity.fechapoliza %}{{ entity.fechapoliza|date('d-m-Y') }}{% endif %}</td>
+                <td>{% if entity.fechafinpoliza %}{{ entity.fechafinpoliza|date('d-m-Y') }}{% endif %}</td>
+                <td>{{ entity.indemnizacionfinalcliente }}</td>
+                <td>{{ entity.apagarcliente }}</td>
+                <td>{{ entity.beneficio }}</td>
+                <td>{{ entity.indemnizacionsinfacturas }}</td>
+                <td>{{ entity.pagoalagente }}</td>
+                <td>{{ entity.deuda }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('siniestro_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('siniestro_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('siniestro_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

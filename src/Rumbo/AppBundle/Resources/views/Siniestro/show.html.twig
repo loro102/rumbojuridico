@@ -1,0 +1,296 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Siniestro</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Cliente</th>
+                <td>{{ entity.cliente }}</td>
+            </tr>
+            <tr>
+                <th>Nombrerepresentado</th>
+                <td>{{ entity.nombrerepresentado }}</td>
+            </tr>
+            <tr>
+                <th>Dnirepresentado</th>
+                <td>{{ entity.dnirepresentado }}</td>
+            </tr>
+            <tr>
+                <th>Fechanacimientorepresentado</th>
+                <td>{{ entity.fechanacimientorepresentado|date('d-m-Y') }}</td>
+            </tr>
+            <tr>
+                <th>Tramitadorexp</th>
+                <td>{{ entity.tramitadorexp }}</td>
+            </tr>
+            <tr>
+                <th>Firmadoanexo</th>
+                <td>{{ entity.firmadoanexo }}</td>
+            </tr>
+            <tr>
+                <th>Abonadomomentosiniestro</th>
+                <td>{{ entity.abonadomomentosiniestro }}</td>
+            </tr>
+            <tr>
+                <th>Casotipo</th>
+                <td>{{ entity.casotipo }}</td>
+            </tr>
+            <tr>
+                <th>Casotipocont</th>
+                <td>{{ entity.casotipocont }}</td>
+            </tr>
+            <tr>
+                <th>Accidentelaboral</th>
+                <td>{{ entity.accidentelaboral }}</td>
+            </tr>
+            <tr>
+                <th>Fechaaperturaexp</th>
+                <td>{{ entity.fechaaperturaexp|date('d-m-Y') }}</td>
+            </tr>
+            <tr>
+                <th>Fechacierreexp</th>
+                <td>{{ entity.fechacierreexp }}</td>
+            </tr>
+            <tr>
+                <th>Fechacobrocliente</th>
+                <td>{{ entity.fechacobrocliente|date('d-m-Y') }}</td>
+            </tr>
+            <tr>
+                <th>Fechacobroempresa</th>
+                <td>{{ entity.fechacobroempresa|date('d-m-Y') }}</td>
+            </tr>
+            <tr>
+                <th>Fechatalon</th>
+                <td>{{ entity.fechatalon|date('d-m-Y') }}</td>
+            </tr>
+            <tr>
+                <th>Cerradopor</th>
+                <td>{{ entity.cerradopor }}</td>
+            </tr>
+            <tr>
+                <th>Fechaarchivoexp</th>
+                <td>{{ entity.fechaarchivoexp|date('d-m-Y') }}</td>
+            </tr>
+            <tr>
+                <th>Fechabajalaboral</th>
+                <td>{{ entity.fechabajalaboral|date('d-m-Y') }}</td>
+            </tr>
+            <tr>
+                <th>Fechaaltalaboral</th>
+                <td>{{ entity.fechaaltalaboral|date('d-m-Y') }}</td>
+            </tr>
+            <tr>
+                <th>Fechaaltadireccion</th>
+                <td>{{ entity.fechaaltadireccion|date('d-m-Y') }}</td>
+            </tr>
+            <tr>
+                <th>Fechasiniestro</th>
+                <td>{{ entity.fechasiniestro|date('Y-m-d') }}</td>
+            </tr>
+            <tr>
+                <th>Horasiniestro</th>
+                <td>{{ entity.horasiniestro|date('H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Fechaingresohospital</th>
+                <td>{{ entity.fechaingresohospital|date('d-m-Y') }}</td>
+            </tr>
+            <tr>
+                <th>Fechaaltahospital</th>
+                <td>{{ entity.fechaaltahospital|date('d-m-Y') }}</td>
+            </tr>
+            <tr>
+                <th>Fechaaltaforense</th>
+                <td>{{ entity.fechaaltaforense|date('d-m-Y') }}</td>
+            </tr>
+            <tr>
+                <th>Fechaofertamotivada</th>
+                <td>{{ entity.fechaofertamotivada|date('d-m-Y') }}</td>
+            </tr>
+            <tr>
+                <th>Fecharespuestamotivada</th>
+                <td>{{ entity.fecharespuestamotivada|date('d-m-Y') }}</td>
+            </tr>
+            <tr>
+                <th>Respuestamotivadaaceptada</th>
+                <td>{{ entity.respuestamotivadaaceptada }}</td>
+            </tr>
+            <tr>
+                <th>Desarrolloaccidente</th>
+                <td>{{ entity.desarrolloaccidente }}</td>
+            </tr>
+            <tr>
+                <th>Lugar</th>
+                <td>{{ entity.lugar }}</td>
+            </tr>
+            <tr>
+                <th>Localidad</th>
+                <td>{{ entity.localidad }}</td>
+            </tr>
+            <tr>
+                <th>Descripcionexp</th>
+                <td>{{ entity.descripcionexp }}</td>
+            </tr>
+            <tr>
+                <th>Danosvehiculo</th>
+                <td>{{ entity.danosvehiculo }}</td>
+            </tr>
+            <tr>
+                <th>Condicion</th>
+                <td>{{ entity.condicion }}</td>
+            </tr>
+            <tr>
+                <th>Danospersonales</th>
+                <td>{{ entity.danospersonales }}</td>
+            </tr>
+            <tr>
+                <th>Cuantiaasisteciasanitaria</th>
+                <td>{{ entity.cuantiaasisteciasanitaria }}</td>
+            </tr>
+            <tr>
+                <th>Firmacartaabogado</th>
+                <td>{{ entity.firmacartaabogado }}</td>
+            </tr>
+            <tr>
+                <th>Cuantiaasisteciajuridica</th>
+                <td>{{ entity.cuantiaasisteciajuridica }}</td>
+            </tr>
+            <tr>
+                <th>Fechareclamacionaj</th>
+                <td>{{ entity.fechareclamacionaj|date('d-m-Y') }}</td>
+            </tr>
+            <tr>
+                <th>Fechadesignacionabogado</th>
+                <td>{{ entity.fechadesignacionabogado|date('d-m-Y') }}</td>
+            </tr>
+            <tr>
+                <th>Ajcobrada</th>
+                <td>{{ entity.ajcobrada }}</td>
+            </tr>
+            <tr>
+                <th>Fechacobroaj</th>
+                <td>{{ entity.fechacobroaj|date('d-m-Y') }}</td>
+            </tr>
+            <tr>
+                <th>Tipodeprocedimiento</th>
+                <td>{{ entity.tipodeprocedimiento }}</td>
+            </tr>
+            <tr>
+                <th>Numeroprocedimiento</th>
+                <td>{{ entity.numeroprocedimiento }}</td>
+            </tr>
+            <tr>
+                <th>Diligenciasprevias</th>
+                <td>{{ entity.diligenciasprevias }}</td>
+            </tr>
+            <tr>
+                <th>Asisteciajuridica</th>
+                <td>{{ entity.asisteciajuridica }}</td>
+            </tr>
+            <tr>
+                <th>Presentadadenuncia</th>
+                <td>{{ entity.presentadadenuncia }}</td>
+            </tr>
+            <tr>
+                <th>Fechadenuncia</th>
+                <td>{{ entity.fechadenuncia|date('d-m-Y') }}</td>
+            </tr>
+            <tr>
+                <th>Presentadademanda</th>
+                <td>{{ entity.presentadademanda }}</td>
+            </tr>
+            <tr>
+                <th>Fechademanda</th>
+                <td>{{ entity.fechademanda|date('d-m-Y') }}</td>
+            </tr>
+            <tr>
+                <th>Fechaaudienciaprevia</th>
+                <td>{{ entity.fechaaudienciaprevia|date('d-m-Y') }}</td>
+            </tr>
+            <tr>
+                <th>Fechajuicio</th>
+                <td>{{ entity.fechajuicio|date('d-m-Y') }}</td>
+            </tr>
+            <tr>
+                <th>Coberturaaccidentescorporales</th>
+                <td>{{ entity.coberturaaccidentescorporales }}</td>
+            </tr>
+            <tr>
+                <th>Cuantiaacccorporales</th>
+                <td>{{ entity.cuantiaacccorporales }}</td>
+            </tr>
+            <tr>
+                <th>Vehiculo</th>
+                <td>{{ entity.vehiculo }}</td>
+            </tr>
+            <tr>
+                <th>Matricula</th>
+                <td>{{ entity.matricula }}</td>
+            </tr>
+            <tr>
+                <th>Conductor</th>
+                <td>{{ entity.conductor }}</td>
+            </tr>
+            <tr>
+                <th>Tomador</th>
+                <td>{{ entity.tomador }}</td>
+            </tr>
+            <tr>
+                <th>Numeropoliza</th>
+                <td>{{ entity.numeropoliza }}</td>
+            </tr>
+            <tr>
+                <th>Refexpediente</th>
+                <td>{{ entity.refexpediente }}</td>
+            </tr>
+            <tr>
+                <th>Fechapoliza</th>
+                <td>{{ entity.fechapoliza|date('d-m-Y') }}</td>
+            </tr>
+            <tr>
+                <th>Fechafinpoliza</th>
+                <td>{{ entity.fechafinpoliza|date('d-m-Y') }}</td>
+            </tr>
+            <tr>
+                <th>Indemnizacionfinalcliente</th>
+                <td>{{ entity.indemnizacionfinalcliente }}</td>
+            </tr>
+            <tr>
+                <th>Apagarcliente</th>
+                <td>{{ entity.apagarcliente }}</td>
+            </tr>
+            <tr>
+                <th>Beneficio</th>
+                <td>{{ entity.beneficio }}</td>
+            </tr>
+            <tr>
+                <th>Indemnizacionsinfacturas</th>
+                <td>{{ entity.indemnizacionsinfacturas }}</td>
+            </tr>
+            <tr>
+                <th>Pagoalagente</th>
+                <td>{{ entity.pagoalagente }}</td>
+            </tr>
+            <tr>
+                <th>Deuda</th>
+                <td>{{ entity.deuda }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('siniestro') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('siniestro_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}
