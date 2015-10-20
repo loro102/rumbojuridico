@@ -80,7 +80,6 @@ class SiniestroController extends Controller
      */
     public function newAction($cliente)
     {
-
         $entity = new Siniestro($cliente);
         $id=$this->getDoctrine()->getManager();
         $persona=$id->getRepository('RumboAppBundle:Cliente')->find($cliente);

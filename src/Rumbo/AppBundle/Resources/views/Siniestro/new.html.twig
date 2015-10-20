@@ -1,10 +1,26 @@
 {% extends '::base.html.twig' %}
+{% block css %}
+    {{ parent() }}
+    <style>
+        #rumbo_appbundle_siniestro_cliente {
+            display: none;
+        }
+        div.rumbo_appbundle_siniestro_cliente {
+            display: none;
+        }
+    div{
+        float: left;
+    }
+    </style>
+{% endblock %}
 
 {% block body -%}
     <h1>Siniestro creation</h1>
 
-    {{ form(form) }}
+    {#{{ form(form) }}#}
+   {{ form_start(form) }}
 
+    {{ form_end(form) }}
         <ul class="record_actions">
     <li>
         <a href="{{ path('siniestro') }}">

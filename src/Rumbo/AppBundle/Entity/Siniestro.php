@@ -57,9 +57,9 @@ class Siniestro
     protected $tramitadorexp;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="firmadoanexo", type="string", length=255)
+     * @ORM\Column(name="firmadoanexo", type="boolean")
      */
     protected $firmadoanexo;
 

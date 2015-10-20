@@ -22,26 +22,36 @@ class SiniestroType extends AbstractType
             ->add('tramitadorexp')
             ->add('firmadoanexo')
             ->add('abonadomomentosiniestro')
-            ->add('casotipo')
-            ->add('casotipocont')
+            ->add('casotipo','choice',array(
+                'choices'  => array(
+                    '1' => '1',
+                    '2' => '2',
+                    '3' =>'3')
+                ))
+            ->add('casotipocont','choice',array(
+                'choices'  => array(
+                    '1' => '1',
+                    '2' => '2',
+                    '3' =>'3')
+                ))
             ->add('accidentelaboral')
-            ->add('fechaaperturaexp')
-            ->add('fechacierreexp')
-            ->add('fechacobrocliente')
-            ->add('fechacobroempresa')
-            ->add('fechatalon')
+            ->add('fechaaperturaexp','date',array('label'=>'Fecha de Apertura','widget' => 'single_text','format' => 'yyyy-MM-dd','attr' => array('class'=> 'datepicker')))
+            ->add('fechacierreexp','date',array('label'=>'Fecha de Cierre','widget' => 'single_text','format' => 'yyyy-MM-dd','attr' => array('class'=> 'datepicker')))
+            ->add('fechacobrocliente','date',array('label'=>'Fecha de Cobro Cliente','widget' => 'single_text','format' => 'yyyy-MM-dd','attr' => array('class'=> 'datepicker')))
+            ->add('fechacobroempresa','date',array('label'=>'Fecha de Cobro Empresa','widget' => 'single_text','format' => 'yyyy-MM-dd','attr' => array('class'=> 'datepicker')))
+            ->add('fechatalon','date',array('label'=>'Fecha de Talon','widget' => 'single_text','format' => 'yyyy-MM-dd','attr' => array('class'=> 'datepicker')))
             ->add('cerradopor')
-            ->add('fechaarchivoexp')
-            ->add('fechabajalaboral')
-            ->add('fechaaltalaboral')
-            ->add('fechaaltadireccion')
-            ->add('fechasiniestro')
+            ->add('fechaarchivoexp','date',array('label'=>'Fecha de Archivo','widget' => 'single_text','format' => 'yyyy-MM-dd','attr' => array('class'=> 'datepicker')))
+            ->add('fechabajalaboral','date',array('label'=>'Fecha de Baja Laboral','widget' => 'single_text','format' => 'yyyy-MM-dd','attr' => array('class'=> 'datepicker')))
+            ->add('fechaaltalaboral','date',array('label'=>'Fecha de Alta Laboral','widget' => 'single_text','format' => 'yyyy-MM-dd','attr' => array('class'=> 'datepicker')))
+            ->add('fechaaltadireccion','date',array('label'=>'Fecha de Dirección Médica','widget' => 'single_text','format' => 'yyyy-MM-dd','attr' => array('class'=> 'datepicker')))
+            ->add('fechasiniestro','date',array('label'=>'Fecha de Siniestro','widget' => 'single_text','format' => 'yyyy-MM-dd','attr' => array('class'=> 'datepicker')))
             ->add('horasiniestro')
-            ->add('fechaingresohospital')
-            ->add('fechaaltahospital')
-            ->add('fechaaltaforense')
-            ->add('fechaofertamotivada')
-            ->add('fecharespuestamotivada')
+            ->add('fechaingresohospital','date',array('label'=>'Fecha de Ingreso Hospitalario','widget' => 'single_text','format' => 'yyyy-MM-dd','attr' => array('class'=> 'datepicker')))
+            ->add('fechaaltahospital','date',array('label'=>'Fecha de Alta Hospitalaria','widget' => 'single_text','format' => 'yyyy-MM-dd','attr' => array('class'=> 'datepicker')))
+            ->add('fechaaltaforense','date',array('label'=>'Fecha de Alta Forense','widget' => 'single_text','format' => 'yyyy-MM-dd','attr' => array('class'=> 'datepicker')))
+            ->add('fechaofertamotivada','date',array('label'=>'Fecha de Oferta Motivada','widget' => 'single_text','format' => 'yyyy-MM-dd','attr' => array('class'=> 'datepicker')))
+            ->add('fecharespuestamotivada','date',array('label'=>'Fecha de Respuesta Motivada','widget' => 'single_text','format' => 'yyyy-MM-dd','attr' => array('class'=> 'datepicker')))
             ->add('respuestamotivadaaceptada')
             ->add('desarrolloaccidente')
             ->add('lugar')
@@ -53,20 +63,20 @@ class SiniestroType extends AbstractType
             ->add('cuantiaasisteciasanitaria')
             ->add('firmacartaabogado')
             ->add('cuantiaasisteciajuridica')
-            ->add('fechareclamacionaj')
-            ->add('fechadesignacionabogado')
+            ->add('fechareclamacionaj','date',array('label'=>'Fecha de Reclamacion de AJ','widget' => 'single_text','format' => 'yyyy-MM-dd','attr' => array('class'=> 'datepicker')))
+            ->add('fechadesignacionabogado','date',array('label'=>'Fecha de Designación de Abogado','widget' => 'single_text','format' => 'yyyy-MM-dd','attr' => array('class'=> 'datepicker')))
             ->add('ajcobrada')
-            ->add('fechacobroaj')
+            ->add('fechacobroaj','date',array('label'=>'Fecha de Cobro de AJ','widget' => 'single_text','format' => 'yyyy-MM-dd','attr' => array('class'=> 'datepicker')))
             ->add('tipodeprocedimiento')
             ->add('numeroprocedimiento')
             ->add('diligenciasprevias')
             ->add('asisteciajuridica')
             ->add('presentadadenuncia')
-            ->add('fechadenuncia')
+            ->add('fechadenuncia','date',array('label'=>'Fecha de Denuncia','widget' => 'single_text','format' => 'yyyy-MM-dd','attr' => array('class'=> 'datepicker')))
             ->add('presentadademanda')
-            ->add('fechademanda')
-            ->add('fechaaudienciaprevia')
-            ->add('fechajuicio')
+            ->add('fechademanda','date',array('label'=>'Fecha de Demanda','widget' => 'single_text','format' => 'yyyy-MM-dd','attr' => array('class'=> 'datepicker')))
+            ->add('fechaaudienciaprevia','date',array('label'=>'Fecha de Audiencia Previa','widget' => 'single_text','format' => 'yyyy-MM-dd','attr' => array('class'=> 'datepicker')))
+            ->add('fechajuicio','date',array('label'=>'Fecha de Juicio','widget' => 'single_text','format' => 'yyyy-MM-dd','attr' => array('class'=> 'datepicker')))
             ->add('coberturaaccidentescorporales')
             ->add('cuantiaacccorporales')
             ->add('vehiculo')
@@ -75,8 +85,8 @@ class SiniestroType extends AbstractType
             ->add('tomador')
             ->add('numeropoliza')
             ->add('refexpediente')
-            ->add('fechapoliza')
-            ->add('fechafinpoliza')
+            ->add('fechapoliza','date',array('label'=>'Fecha de Poliza','widget' => 'single_text','format' => 'yyyy-MM-dd','attr' => array('class'=> 'datepicker')))
+            ->add('fechafinpoliza','date',array('label'=>'Fecha de Fin de Poliza','widget' => 'single_text','format' => 'yyyy-MM-dd','attr' => array('class'=> 'datepicker')))
             ->add('indemnizacionfinalcliente')
             ->add('apagarcliente')
             ->add('beneficio')
@@ -86,8 +96,8 @@ class SiniestroType extends AbstractType
             ->add('fase')
             ->add('cia')
             ->add('tramitadorcia')
-            ->add('cliente','hidden')
-            /*->add('cliente','entity', array(
+//            ->add('cliente')
+            ->add('cliente','entity', array(
         'class' => 'RumboAppBundle:Cliente',
         'query_builder' => function (ClienteRepository $er) {
             return $er->createQueryBuilder('u')
@@ -95,7 +105,7 @@ class SiniestroType extends AbstractType
                 ->addOrderBy('u.apellido1', 'ASC')
                 ->addOrderBy('u.apellido2')
                 ;}
-            ))*/
+            ))
         ;
     }
     

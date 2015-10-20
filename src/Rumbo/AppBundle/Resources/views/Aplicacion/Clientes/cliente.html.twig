@@ -1,0 +1,90 @@
+{% extends '::base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+{% endblock %}
+
+{% block body -%}
+    <h1>Datos de {{ entity.nombre }} {{ entity.apellido1 }} {{ entity.apellido2 }}</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <td>Cliente: {{ entity.nombre }} {{ entity.apellido1 }} {{ entity.apellido2 }} </td>
+                <td colspan="3">Nif: {{ entity.nif }}</td>
+            </tr>
+            <tr>
+                <td colspan="4">Direccion: {{ entity.direccion }}</td>
+            </tr>
+            <tr>
+                <td>Cp: {{ entity.cp }} </td>
+                <td>Localidad: {{ entity.localidad }}</td>
+                <td colspan="2">Provincia: {{ entity.provincia }}</td>
+            </tr>
+            <tr>
+                <td>Telefono1: {{ entity.telefono1 }}</td>
+                <td>Telefono2: {{ entity.telefono2 }}</td>
+                <td>Telefono3: {{ entity.telefono3 }}</td>
+                <td>Email: {{ entity.email }}</td>
+            </tr>
+
+            <tr>
+                <td>Fechadenacimiento: {{ entity.fechadenacimiento|date('d-m-Y') }}</td>
+                <td>Fechaprimerabono: {{ entity.fechaprimerabono|date('d-m-Y') }}</td>
+                <td colspan="2">Fechaabono: {{ entity.fechaabono|date('d-m-Y') }}</td>
+            </tr>
+
+            <tr>
+                <td colspan="4">Notas: {{ entity.notas }}</td>
+            </tr>
+
+            <tr>
+                <td colspan="4">Iban: {{ entity.iban }}</td>
+            </tr>
+            <tr>
+                <td>Nomailing: {% if entity.noMailing == true %}No Quiere Recibir Mailing{% else %}Quiere Recibir Mailing{% endif %}</td>
+                <td colspan="3">Firmadoabono: {% if entity.firmadoabono == true %}Si{% else %}No{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+<a href="{{ path('siniestro_nuevo', { 'cliente': entity.id }) }}">Nuevo Expediente</a>
+    {% if siniestros is not empty  %}
+    <table>
+        <tr>
+            <th>Fecha de Expediente</th>
+            <th>Fecha de Siniestro</th>
+            <th>Lugar</th>
+            <th>Descripcion de expediente</th>
+        </tr>
+
+        {% for siniestro in siniestros %}
+            <tr>
+                <td>{{ siniestro.fechasiniestro|date('d-m-Y') }}</td>
+                <td>{{ siniestro.fechaaperturaexp|date('d-m-Y') }}</td>
+                <td>{{ siniestro.lugar }}</td>
+                <td>{{ siniestro.descripcionexp }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+        {% else %}
+        Este Cliente no tiene ningun expediente abierto
+    {% endif %}
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('cliente') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('cliente_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}
