@@ -98,15 +98,17 @@ class ClienteController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('RumboAppBundle:Cliente')->find($id);
-
+        $siniestro = $em->getRepository('RumboAppBundle:Siniestro')->findBy(array('cliente'=>$id));
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Cliente entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('RumboAppBundle:Cliente:show.html.twig', array(
+        //return $this->render('RumboAppBundle:Cliente:show.html.twig', array(
+        return $this->render('RumboAppBundle:Aplicacion/Clientes:cliente.html.twig', array(
             'entity'      => $entity,
+            'siniestros'   => $siniestro,
             'delete_form' => $deleteForm->createView(),
         ));
     }
